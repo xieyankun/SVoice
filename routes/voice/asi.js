@@ -27,16 +27,9 @@ var storage = multer.diskStorage({
 //加载配置  
 var upload = multer({ storage: storage }); 
 
-router.get('/', async (ctx, next) => {
-  console.log('--------------')
-  ctx.body = `<form action="">
-              <input type="file">
-            </form>`;
-});
-
 // 语音解析
-router.post('/api/voice/analysis/', upload.single('file'), async (ctx, next) => {
-  console.log('1--------------', '/api/voice/analysis')
+router.post('/api/voice/asi/', upload.single('file'), async (ctx, next) => {
+  console.log('1--------------', '/api/voice/asi')
 
   let outputFilePath = path.resolve('uploads/output.wav');
 
@@ -104,11 +97,6 @@ router.post('/api/voice/analysis/', upload.single('file'), async (ctx, next) => 
     msg: 'success',
     data: resultData//返回文件名 
   }
-});
-
-// 语音合成
-router.post('/api/voice/tts', async (ctx, next) => {
-  console.log('--------------', '/api/voice/tts')
 });
 
 function transformAuido({ input, output, audioFrequency, format }) {

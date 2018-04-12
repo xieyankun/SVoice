@@ -14,11 +14,8 @@ const audioBase64 = new Buffer(fs.readFileSync(filePath)).toString('base64');
  * request web api
  */
 const now = Date.parse(new Date()) / 1000;
-const appid = '5ac439b9';
-const apiKey = '7f09523173d048c685e51fdf7be28138';
-
-// const appid = '5ac97e19';
-// const apiKey = '1166f498adf549bf9b5679c363df1925';
+const appid = '5ac97e19';
+const apiKey = '1166f498adf549bf9b5679c363df1925';
 
 const paramBase64 = new Buffer(JSON.stringify({
   "auf":"16k",
